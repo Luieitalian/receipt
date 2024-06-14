@@ -1,7 +1,7 @@
 'use strict';
 
 // Simply using 'toFixed' gives false results (e.g. 1.55 => 1.5).
-const {roundTo} = require('round-to');
+const roundTo = require('round-to');
 
 module.exports = {
   PAD_LEFT: 'left',
