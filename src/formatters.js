@@ -1,6 +1,5 @@
 'use strict';
 
-const EOL = require('os').EOL;
 const utils = require('./utils');
 
 module.exports = {
@@ -17,7 +16,7 @@ module.exports = {
 			// Expand array to multiple text calls with same formatting.
 			return chunk.value.map((value) => {
 				return this.formatters.text({ type: chunk.type, value: value, align: chunk.align, padding: chunk.padding });
-			}).join(EOL);
+			}).join('\n');
 		}
 
 		let chars = this.config.width - (chunk.hasOwnProperty('padding') ? (chunk.hasOwnProperty('align') && chunk.align === 'center' ? chunk.padding * 2 : chunk.padding) : 0);
@@ -57,7 +56,7 @@ module.exports = {
 				}
 
 				return utils.pad(line, ' ', this.config.width, utils.PAD_RIGHT);
-			}).join(EOL);
+			}).join('\n');
 		}
 
 		return '';
@@ -70,7 +69,7 @@ module.exports = {
 			widest = Math.max(line.name.length, widest);
 		}
 
-		return chunk.lines.map((line) => utils.pad(line.name + ':', ' ', widest + 5) + line.value).join(EOL);
+		return chunk.lines.map((line) => utils.pad(line.name + ':', ' ', widest + 5) + line.value).join('\n');
 	},
 
 	table(chunk) {
@@ -112,6 +111,6 @@ module.exports = {
 
 		lines.push(this.formatters.ruler(''));
 
-		return lines.join(EOL);
+		return lines.join('\n');
 	}
 };

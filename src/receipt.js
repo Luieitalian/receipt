@@ -1,6 +1,5 @@
 'use strict';
 
-const EOL = require('os').EOL;
 const formatters = require('./formatters');
 
 const receipt = {
@@ -19,7 +18,7 @@ const receipt = {
 			}
 
 			return '';
-		}).join(EOL);
+		}).join('\n');
 	},
 
 	addFormatter(name, handler) {
