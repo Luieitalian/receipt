@@ -112,5 +112,15 @@ module.exports = {
 		lines.push(this.formatters.ruler(''));
 
 		return lines.join('\n');
-	}
+	},
+	// new formatter for Luieitalian/Toyota_Project
+	properties2(chunk) {
+		let widest = 0;
+
+		for (let line of chunk.lines) {
+			widest = Math.max(line.name.length, widest);
+		}
+
+		return chunk.lines.map((line) => utils.pad(line.name + ':', ' ', this.config.width - 10, utils.PAD_RIGHT) + line.value).join('\n');
+	},
 };

@@ -41,6 +41,7 @@ receipt.addFormatters({
 	ruler: formatters.ruler,
 	text: formatters.text,
 	properties: formatters.properties,
+	properties2: formatters.properties2,
 	table: formatters.table
 });
 
