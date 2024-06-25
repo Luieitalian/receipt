@@ -34,10 +34,15 @@ const output = receipt.create([
 		{ name: 'Total amount (incl. GST)', value: 'AUD XX.XX' }
 	] },
 	{ type: 'empty' },
-	{ type: 'properties2', lines: [
-		{ name: 'Amount Received', value: 'AUD XX.XX' },
-		{ name: 'Amount Returned', value: 'AUD XX.XX' }
-	] },
+	{
+        type: 'properties2',
+        lines: [
+          {name: 'Subtotal', value: 14.7},
+          {name: 'Discount', value: 0},
+          {name: 'Tax', value: 1.47},
+          {name: 'Payment Total', value: 16.17},
+        ],
+      },
 	{ type: 'empty' },
 	{ type: 'text', value: 'Final bits of text at the very base of a docket. This text wraps around as well!', align: 'center', padding: 5 }
 ]);

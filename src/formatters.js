@@ -121,6 +121,6 @@ module.exports = {
 			widest = Math.max(line.name.length, widest);
 		}
 
-		return chunk.lines.map((line) => utils.pad(line.name + ':', ' ', this.config.width - 10, utils.PAD_RIGHT) + line.value).join('\n');
+		return chunk.lines.map((line) => utils.pad(line.name + ':', ' ', this.config.width - 6, utils.PAD_RIGHT) + line.value).join('\n');
 	},
 };
